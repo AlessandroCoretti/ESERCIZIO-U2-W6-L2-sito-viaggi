@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
+
+In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
+
+Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
+
+
+Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
+
+Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
+Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
+
+Esercizi:
+
+1) Implementa una navbar con questi elementi di menu:
+Home
+Saldi
+Welcome Summer
+Last Minute
+Recensioni
+
+Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
+
+2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
+
+3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
+una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
+
+Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
+
+4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
+
+In questa sezione dovranno esserci:
+
+4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
+3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
+2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
+
+le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
+
+5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
+
+In questa sezione dovranno esserci:
+
+6 card per destinazioni per linea a schermo extra large
+3 card per destinazioni per linea a schermo grande (desktop)
+2 card per destinazioni per linea a schermo medio (tablet)
+2 card per destinazioni per linea a schermo piccolo (mobile)
+
+6) Implementa la sezione "Offerta del giorno". Qui avrai:
+
+66% dello spazio dedicato all'immagine del luogo di destinazione
+33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
+
+l'immagine avrà i bordi arrotondati e un'ombra leggera
+per il contenuto: il nome dovrà essere più grande del resto,
+le date dovranno essere formattate con font "monospace",
+il prezzo dovrà essere definito come "lead"
+e il badge sarà scuro
+
+
+7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
+
+8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
+
+9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
+
+10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
+Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
+
+11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
+
+
+
+EXTRAS
+
+12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
+
+13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
+
+14) Crea un modale con un campo email e un messaggio.
+
+15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
+
+16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
+
+17) Crea una funzione che rimuova tutte le "card" dalla pagina
+
+-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="px-5">
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="data:image/png;base64,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"
+            alt="logo"
+            width="60"
+            height="60"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Saldi</a>
+            </li>
+            <li class="nav-itrm">
+              <a class="nav-link" href="#"> Welcome Summer </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Last Minute</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recensioni</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno" aria-label="Search" />
+            <button class="btn btn-outline-danger" type="submit">Cerca</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <header class="px-5">
+      <div class="card px-3">
+        <h2 class="display-4">Malu Viaggi</h2>
+        <div class="card-body px-0">
+          <p class="card-text fs-6 mb-4">Scopri le destinazioni più calde del momento.</p>
+          <a href="#" class="btn btn-primary">Prenota ora</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-3">
+      <div class="container">
+        <h4>Saldi</h4>
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card" style="border: 2px solid; border-color: #0d6efd">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
+                class="card-img-top"
+                alt="hotel"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Titolo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary text-dark">Prenota</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card" style="border: 2px solid; border-color: #0d6efd">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
+                class="card-img-top"
+                alt="hotel"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Titolo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary text-dark">Prenota</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
+                class="card-img-top"
+                alt="hotel"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Titolo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary text-dark">Prenota</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card" style="border: 2px solid; border-color: #0d6efd">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
+                class="card-img-top"
+                alt="hotel"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Titolo</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary text-dark">Prenota</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
